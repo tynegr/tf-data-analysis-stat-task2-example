@@ -1,13 +1,18 @@
 import pandas as pd
 import numpy as np
-
 from scipy.stats import norm
 
 
-chat_id = 462449141
+chat_id = 462449141 # Ваш chat ID, не меняйте название переменной
 
 def solution(p: float, x: np.array) -> tuple:
-    const = 0.059
-    x -= const
-    return max(max(x), 2 * (x.mean() - np.sqrt(np.var(x)) * norm.ppf(1 - p / 2) / np.sqrt(len(x)))) + const, \
-    max(max(x), 2 * (x.mean() - np.sqrt(np.var(x)) * norm.ppf(p / 2) / np.sqrt(len(x)))) + const
+    # Измените код этой функции
+    # Это будет вашим решением
+    # Не меняйте название функции и её аргументы
+    a = 0.059
+    n = len(x)
+    x_max = x.max()
+    alpha = (1 - p)**(1./n)
+    left = x_max
+    right= (x_max - a) / alpha + a
+    return (left, right)
